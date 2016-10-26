@@ -1,21 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Ventanas;
-
+import Imagenes.f_menu;
+import javax.swing.ImageIcon;
 /**
  *
  * @author jesus
  */
-public class Menu extends javax.swing.JFrame {
+public class Menu extends javax.swing.JFrame 
+{
 
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    public Menu() 
+    {
         initComponents();
+        this.setSize(700, 500);
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Menú principal");
+        this.setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icono.png")).getImage());
     }
 
     /**
@@ -27,13 +30,35 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel = new javax.swing.JPanel();
+        btn_citas = new javax.swing.JButton();
+        btn_reportes = new javax.swing.JButton();
+        btn_servicios = new javax.swing.JButton();
         btn_registros = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 500));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
+        btn_citas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/citas.png"))); // NOI18N
+        btn_citas.setText("Citas");
+        btn_citas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_citasActionPerformed(evt);
+            }
+        });
+
+        btn_reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reportes.png"))); // NOI18N
+        btn_reportes.setText("Reportes");
+
+        btn_servicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/servicios.png"))); // NOI18N
+        btn_servicios.setText("Servicios");
+
+        btn_registros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/registro.png"))); // NOI18N
         btn_registros.setText("Registros");
         btn_registros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -41,48 +66,65 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Servicios");
-
-        jButton3.setText("Citas");
-
-        jButton4.setText("Reportes");
+        javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
+        panel.setLayout(panelLayout);
+        panelLayout.setHorizontalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_citas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_registros))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_servicios)
+                    .addComponent(btn_reportes))
+                .addGap(39, 39, 39))
+        );
+        panelLayout.setVerticalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_registros)
+                    .addComponent(btn_servicios))
+                .addGap(99, 99, 99)
+                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_citas)
+                    .addComponent(btn_reportes))
+                .addContainerGap(70, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_registros)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(90, 90, 90))
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_registros)
-                    .addComponent(jButton2))
-                .addGap(95, 95, 95)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
-                .addContainerGap(78, Short.MAX_VALUE))
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        f_menu a = new f_menu();
+        panel.add(a);
+        panel.repaint();
+    }//GEN-LAST:event_formWindowOpened
+
+    private void btn_citasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_citasActionPerformed
+        this.dispose();
+        Citas c = new Citas();
+        c.setVisible(true);
+    }//GEN-LAST:event_btn_citasActionPerformed
+
     private void btn_registrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrosActionPerformed
         this.dispose();
         Altas a = new Altas();
-        a.setVisible(true);        
+        a.setVisible(true);
     }//GEN-LAST:event_btn_registrosActionPerformed
 
     /**
@@ -121,9 +163,10 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_citas;
     private javax.swing.JButton btn_registros;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btn_reportes;
+    private javax.swing.JButton btn_servicios;
+    private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
 }
